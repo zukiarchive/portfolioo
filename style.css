@@ -103,9 +103,11 @@ h2 {
   height: 100%;
 }
 .left-bottom .masonry {
+  display: flex;
   column-count: 3;
   column-gap: 10px;
   padding: 1rem 0;
+  gap: 1em;
   overflow-x: auto;
 }
 .masonry img {
@@ -113,6 +115,18 @@ h2 {
   height: 100%;
   border-radius: 16px;
   object-fit: cover;
+  flex: 0 0 5em;
+}
+.masonry::-webkit-scrollbar {
+    display: none;
+}
+.group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    animation: spin 60s infinite linear;
+    padding-right: 1em;
 }
 .left-bottom .masonry::-webkit-scrollbar {
   width: 0.5rem;
@@ -124,6 +138,10 @@ h2 {
 .left-bottom .masonry::-webkit-scrollbar-thumb {
   background: #8ca9ff;
   border-radius: 20px;
+}
+@keyframes spin{
+  from {translate: 0;}
+  to {translate: -100%;}
 }
 
 /* the RIGHT TOP CONTAINER STYLINGS */
@@ -210,6 +228,10 @@ h2 {
     height: 100%;
     border-radius: 16px;
   }
+
+  .masonry::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* TABLET */
@@ -244,4 +266,9 @@ h2 {
     height: 25rem;
     column-count: 2;
   }
+  .masonry::-webkit-scrollbar {
+    display: none;
+  }
 }
+
+
